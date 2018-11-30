@@ -1,19 +1,20 @@
 import sys
-import RPi.GPIO as GPIO
-
+import pigpio
+import time
 help = sys.argv
 
-
-pinIn = help[2]
-mode = help[1]
-
+pin = int(help[2])
+mode = int(help[1])
+pi=pigpio.pi()
 if int(mode) == 1:
-    GPIO.setup(pinIn, GPIO.OUT)
-    GPIO.output(pinIn, True)
-    print(1)
+	pi.set_mode(pin,pigpio.OUTPUT)
+	pi.write(pin,1)
+	print(1)
 
 if int(mode) == 0:
-    GPIO.setup(pinIn, GPIO.OUT)
-    GPIO.output(pinIn, False)
-    print(0)
+	pi.set_mode(pin,pigpio.OUTPUT)
+	pi.write(pin,0)
+	print(0)
+
+pi.stop()
 
