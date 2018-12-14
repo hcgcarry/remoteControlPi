@@ -1,14 +1,16 @@
-import sys
+import time
+import pigpio # abyz.co.uk/rpi/pigpio/python.html
 
-help = sys.argv
+LED=17
 
+pi = pigpio.pi() # Connect to local Pi.
 
-pinIn = help[2]
-mode = help[1]
+pi.set_mode(LED, pigpio.OUTPUT)
 
-if int(mode) == 1:
-    print(1)
+for i in range(10):
+   pi.write(LED, 1)
+   time.sleep(0.2)
+   pi.write(LED, 0)
+   time.sleep(0.2)
 
-if int(mode) == 0:
-    print(0)
-
+pi.stop() # Disconnect from local Pi.

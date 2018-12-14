@@ -1,5 +1,4 @@
 			function controlCall(mode){
-				console.log(mode);
 																	//meta search start
 				var control=new XMLHttpRequest();
 				control.onreadystatechange = function(){
