@@ -7,7 +7,7 @@ from sendEmail import send
 
 # handle the button event
 def buttonEventHandler (pin):
-    print ("%d falling"%pin)
+    print "handling button event"
 
     # turn the green LED on
     GPIO.output(25,True)
@@ -17,9 +17,16 @@ def buttonEventHandler (pin):
     # turn the green LED off
     GPIO.output(25,False)
 
-def printRead(pin):
-	print GPIO.input(pin)
-	time.sleep(1)
+def test(pin):
+    print "handling button event"
+
+    # turn the green LED on
+    GPIO.output(25,True)
+
+    time.sleep(1)
+
+    # turn the green LED off
+    GPIO.output(25,False)
 
 
 
@@ -48,7 +55,10 @@ def main():
 
     # make the red LED flash
     while True:
-		printRead(23)
+        GPIO.output(24,True)
+        time.sleep(1)
+        GPIO.output(24,False)
+        time.sleep(1)
 
 
     GPIO.cleanup()
