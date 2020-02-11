@@ -9,7 +9,7 @@ subject = 'OMG Super Important Message'
 body = 'Hey, whats up?\n\n- You'
 
 email_text = 'door are open'
-
+#fdfsfsfd
 def send(pin):
 	server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 	server.ehlo()
