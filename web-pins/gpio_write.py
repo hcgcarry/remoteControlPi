@@ -16,5 +16,6 @@ if int(mode) == 0:
 	pi.write(pin,0)
 	print(0)
 
+#fdsfsfdsdf
 pi.stop()
 
